@@ -1,0 +1,29 @@
+title: "Eicent · Homepage"
+description: "Product Manager , Security Reseacher& Technical Writer"
+url: "https://eicent.github.io"
+baseurl: ""
+lang: "zh-CN"
+timezone: "Asia/Shanghai"
+markdown: kramdown
+highlighter: rouge
+permalink: /blog/:title/
+theme: null
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+author:
+  name: "Guojie Ni"
+  email: "eicent7@gmail.com"
+  github: "eicent"
+  linkedin: "eicent"
+collections:
+  projects:
+    output: false
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      author: "eicent"
+      image: /assets/images/avatar.png

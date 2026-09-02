@@ -1,0 +1,26 @@
+---
+layout: default
+---
+<article class="post container">
+  <header class="post-header reveal">
+    <a class="back-link" href="{{ '/blog/' | relative_url }}">← Back to Blog</a>
+    <p class="eyebrow">{{ page.categories | join: " · " }}</p>
+    <h1>{{ page.title }}</h1>
+    <p class="post-meta">{{ page.date | date: "%Y.%m.%d" }} · {{ page.author }}</p>
+    {% if page.description %}<p class="post-description">{{ page.description }}</p>{% endif %}
+  </header>
+  {% if page.hero_image %}
+  <img class="post-hero-image reveal" src="{{ page.hero_image | relative_url }}" alt="">
+  {% endif %}
+  <div class="post-layout">
+    <aside class="post-toc">
+      <div>ON THIS PAGE</div>
+      <a href="#top">文章内容</a>
+    </aside>
+    <div class="post-content reveal">{{ content }}</div>
+  </div>
+  <nav class="post-nav">
+    {% if page.previous.url %}<a href="{{ page.previous.url | relative_url }}">← {{ page.previous.title }}</a>{% else %}<span></span>{% endif %}
+    {% if page.next.url %}<a href="{{ page.next.url | relative_url }}">{{ page.next.title }} →</a>{% endif %}
+  </nav>
+</article>

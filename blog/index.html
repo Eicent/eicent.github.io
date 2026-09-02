@@ -1,0 +1,24 @@
+---
+layout: default
+title: "Blog"
+description: "Jay Ni 的文章"
+---
+<section class="section container">
+  <div class="section-heading reveal">
+    <p class="eyebrow">Articles</p>
+    <h1>Articles</h1>
+    <p class="section-intro">Record the thinking of learning technology, building products and life.</p>
+  </div>
+  <div class="article-list full">
+    {% for post in site.posts %}
+    <a class="article-row reveal" href="{{ post.url | relative_url }}">
+      <div>
+        <span>{{ post.date | date: "%Y.%m.%d" }} · {{ post.categories | join: " · " }}</span>
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.description }}</p>
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+    {% endfor %}
+  </div>
+</section>
